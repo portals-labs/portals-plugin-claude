@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "portals",
+  "owner": {
+    "name": "Portals",
+    "url": "https://portals.to/"
+  },
+  "description": "Claude Code plugin for building browser games on Portals.",
+  "plugins": [
+    {
+      "name": "portals-plugin-claude",
+      "source": "./plugins/portals-plugin-claude",
+      "description": "Build, manage, and publish Portals browser games from Claude Code."
+    }
+  ]
+}

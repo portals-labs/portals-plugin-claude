@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "portals-plugin-claude",
+  "displayName": "Portals Web Games",
+  "version": "0.1.1",
+  "description": "Build, manage, and publish Portals browser games from Claude Code.",
+  "author": {
+    "name": "Portals",
+    "url": "https://portals.to/"
+  },
+  "homepage": "https://portals.to/my-games",
+  "repository": "https://github.com/portals-labs/portals-plugin-claude",
+  "license": "ISC",
+  "keywords": [
+    "portals",
+    "browser-games",
+    "multiplayer",
+    "game-development",
+    "mcp"
+  ]
+}
