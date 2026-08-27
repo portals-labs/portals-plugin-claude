@@ -118,6 +118,8 @@ Each profile is one gamemode in the lobby list: its player-facing name, which vi
 
 Two of those fields interact in a way that matters: **a party must fit inside one team**, so `teamSize` — not `maxPlayers` — is the effective cap on how many friends can enter together, and `maxPartySize` can never exceed it. For a free-for-all game, set `teamSize` equal to `maxPlayers` (one "team" that is simply the room) and give `maxPartySize` the same value unless you want a lower cap on group joins; leaving a team-shaped `teamSize` on an FFA quietly rejects larger parties with "that game does not support this party size" even though the match has room. Team assignment is not yet visible to game code, so for now `teamSize` has no effect beyond this seating rule.
 
+**Managed lobbies admit guests.** A signed-out visitor on the game page sees the real lobby list and can join an open *public* lobby without an account (hosting a lobby, private lobbies, and mature or paid games still require signing in). Those players arrive in your session like any other, but with `playerId: null` and no `displayName` or `avatarUrl` — the same shape as an unsigned player in a casual session — so a managed match cannot assume everyone can save progress, submit scores, or buy products. Show a sensible name such as "guest", keep the match fully playable for them, and offer `Portals.identity.requestLogin()` from a click for anything that needs an account.
+
 ### What a managed match changes in the game
 
 Detect it, then join plainly:
