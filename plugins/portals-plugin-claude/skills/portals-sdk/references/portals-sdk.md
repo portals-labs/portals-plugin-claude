@@ -220,6 +220,8 @@ The current host decides how to close the game and restore player controls.
 | `Portals.avatar.openPicker()`                         | Opens trusted global avatar UI and resolves to the refreshed profile.   |
 | `Portals.identity.requestLogin()`                     | Opens Portals sign-in when needed and resolves to the signed-in player. |
 | `Portals.identity.onChange(listener)`                 | Subscribes to player changes and returns an unsubscribe function.       |
+| `Portals.matchmaking.current()`                       | Resolves to the managed-match context, or `null` in a casual session.   |
+| `Portals.matchmaking.onChange(listener)`              | Subscribes to managed-match phase changes; returns an unsubscribe.      |
 | `Portals.saveState(data)`                             | Saves JSON state for the signed-in player.                              |
 | `Portals.loadState()`                                 | Loads JSON state or returns `null`.                                     |
 | `Portals.submitScore(score, mode?)`                   | Keeps the player's highest casual score for a mode.                     |
