@@ -35502,7 +35502,7 @@ TypeScript declarations are not part of the game's files \u2014 for a TS project
 - Portals.identity.requestLogin() \u2192 Promise of the signed-in player. Only call from a direct user action (button click). Never ask for passwords in-game.
 - Portals.identity.onChange(listener) \u2192 unsubscribe fn; fires on sign-in/out.
 - Portals.saveState(data) / Portals.loadState() \u2014 per-player persistence; requires sign-in. State must be JSON-serializable and no larger than 64 KB after JSON encoding. loadState resolves to the saved state or null.
-- Portals.submitScore(score, mode?) \u2014 mode defaults to "default"; lowercase letters, numbers, hyphens, max 32 chars.
+- Portals.submitScore(score, mode?, options?) \u2014 mode defaults to "default"; lowercase letters, numbers, hyphens, max 32 chars. Keeps the player's highest score unless options is { replace: true }, which stores the new score even when lower.
 - Portals.getLeaderboard({ mode, limit }?) \u2192 { entries } with rank, playerId, displayName, avatarUrl, score. limit 1\u2013100, default 10. Free games allow unsigned leaderboard reads; paid games require verification first.
 - Portals.quit() \u2014 asks the host to close the game and restore player controls.
 
@@ -35774,7 +35774,7 @@ Full docs: https://portals.to/documentation/web-games/portals-sdk, https://porta
 var server = new McpServer(
   {
     name: "portals-web-games",
-    version: "0.1.5",
+    version: "0.1.6",
     description: "MCP server for Portals web games \u2014 create browser game projects, push local source to them, and pull their source back down."
   },
   { instructions: SERVER_INSTRUCTIONS }
